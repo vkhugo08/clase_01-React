@@ -1,20 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import Card from'./components/Card'
+import CardsPerson from'./components/CardsPerson'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const hobbies = ["Video juegos", "hacer ejecicio", "pasar tiempo con amigos",'chilear'];
+  const footfav = ['Pizza','Hamburguesa','Empanadas','Pastica'];
+  const stackTech = ['Html','JavaScript','Css','React'];
 
   return (
     <div className="App">
-      <ul>
-        <li><b>Nombre:</b> Victor Hugo</li>
-      <li><b>Edad:</b> 30</li>
-      <li><b>Pelicula Fav:</b> Star Wars</li>
-      <li><b>Musica Fav:</b> Salsita</li>
-      </ul>
+      <CardsPerson/>
+      <Card
+        title='hobbies' 
+        content={hobbies}
+        color='white'
+        background='green'
+        />
+        <Card
+        title='Foot' 
+        content={footfav}
+        color='white'
+        background='red'
+        />
+        <Card
+        title='Abilites' 
+        content={stackTech}
+        color='white'
+        background='black'
+        />
     </div>
-  )
+    
+  );
 }
 
 export default App
